@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Product;
+import dao.ProductDAO;
+import entity.Product;
 import service.ProductService;
 
 @RestController
@@ -30,4 +31,8 @@ public class ProductController {
         return product;
     	}
     
+    @GetMapping("/productsdesc")
+    public List<Product> getAllProductsDesc() {
+        return productService.getAllProductsDesc();
+    	}
 }

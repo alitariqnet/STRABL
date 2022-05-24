@@ -3,7 +3,7 @@ package IService;
 import java.util.List;
 import java.util.Optional;
 
-import model.Product;
+import entity.Product;
 
 public interface IProduct {
 	List<Product> getAllProducts();

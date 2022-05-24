@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import IService.IProduct;
-import model.Product;
+import dao.ProductDAO;
+import entity.Product;
 import repository.ProductRepository;
 
 @Service
@@ -15,6 +16,8 @@ public class ProductService implements IProduct{
 
 	@Autowired
 	ProductRepository productRepository;
+	@Autowired
+	ProductDAO productDAO;
 	
 	public List<Product> getAllProducts() {
         return productRepository.findAll();
@@ -38,5 +41,9 @@ public class ProductService implements IProduct{
 	@Override
 	public void deleteById(long id) {
 		productRepository.deleteById(id);
+	}
+	
+	public List<Product> getAllProductsDesc() {
+		return productDAO.getAllProductsDesc();
 	}
 }

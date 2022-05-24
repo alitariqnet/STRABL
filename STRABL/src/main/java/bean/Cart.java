@@ -1,7 +1,9 @@
-package model;
+package bean;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import entity.Product;
 
 public class Cart {
 
