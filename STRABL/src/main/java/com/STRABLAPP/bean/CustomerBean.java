@@ -1,24 +1,27 @@
-package bean;
+package com.STRABLAPP.bean;
 
+import org.springframework.stereotype.Component;
+
+//@Component
 public class CustomerBean {
 
-	private long Id;
+	private int Id;
 	private String name;
 	private String phone;
 	private String address;
 	
-	public CustomerBean(long id, String name, String phone, String address) {
+	public CustomerBean(int id, String name, String phone, String address) {
 		this.Id = id;
 		this.name = name;
 		this.phone = phone;
 		this.address = address;
 	}
 
-	public long getId() {
+	public int getId() {
 		return Id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.Id = id;
 	}
 

@@ -1,4 +1,4 @@
-package service;
+package com.STRABLAPP.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import IService.IProduct;
-import dao.ProductDAO;
-import entity.Product;
-import repository.ProductRepository;
+import com.STRABLAPP.IService.IProduct;
+import com.STRABLAPP.dao.ProductDAO;
+import com.STRABLAPP.entity.Product;
+import com.STRABLAPP.repository.ProductRepository;
 
 @Service
 public class ProductService implements IProduct{
@@ -19,6 +19,15 @@ public class ProductService implements IProduct{
 	@Autowired
 	ProductDAO productDAO;
 	
+	public ProductService() {
+		super();
+	}
+
+	public ProductService(ProductDAO productDAO) {
+		super();
+		this.productDAO = productDAO;
+	}
+
 	public List<Product> getAllProducts() {
         return productRepository.findAll();
 	}

@@ -1,9 +1,9 @@
-package IService;
+package com.STRABLAPP.IService;
 
 import java.util.List;
 import java.util.Optional;
 
-import entity.Product;
+import com.STRABLAPP.entity.Product;
 
 public interface IProduct {
 	List<Product> getAllProducts();

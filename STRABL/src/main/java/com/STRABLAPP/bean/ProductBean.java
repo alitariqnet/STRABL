@@ -1,16 +1,18 @@
-package bean;
+package com.STRABLAPP.bean;
 
+import org.springframework.stereotype.Component;
 
+//@Component
 public class ProductBean {
 
-	private long id;
+	private int id;
 	private String name;
 	private String color;
 	private String brand;
 	private String type;
 	private int price;
 	
-	public ProductBean(long id, String name, String color, String brand, String type, int price) {
+	public ProductBean(int id, String name, String color, String brand, String type, int price) {
 		this.id=id;
 		this.name = name;
 		this.color = color;
@@ -19,11 +21,11 @@ public class ProductBean {
 		this.price = price;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

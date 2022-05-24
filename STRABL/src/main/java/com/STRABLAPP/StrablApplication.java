@@ -1,11 +1,9 @@
-package com.STRABLAPP.STRABL;
+package com.STRABLAPP;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = "com.STRABLAPP")
-@EnableJpaRepositories("repository")
+@SpringBootApplication
 public class StrablApplication {
 
 	public static void main(String[] args) {

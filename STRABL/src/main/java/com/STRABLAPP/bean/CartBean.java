@@ -1,15 +1,18 @@
-package bean;
+package com.STRABLAPP.bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.Product;
+import org.springframework.stereotype.Component;
 
-public class Cart {
+import com.STRABLAPP.entity.Product;
+
+@Component
+public class CartBean {
 
 	List<Product> list = new ArrayList<Product>();
 
-	public Cart(List<Product> list) {
+	public CartBean(List<Product> list) {
 		this.list = list;
 	}
 

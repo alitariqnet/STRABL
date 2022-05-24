@@ -1,15 +1,15 @@
-package service;
+package com.STRABLAPP.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import bean.Cart;
+import com.STRABLAPP.bean.CartBean;
 
 @Service
 public class CartService {
 
 	@Autowired
-	Cart cart;
+	CartBean cart;
 	
 	
 }

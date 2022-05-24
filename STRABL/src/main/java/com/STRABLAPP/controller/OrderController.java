@@ -1,9 +1,8 @@
-package controller;
+package com.STRABLAPP.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CartController {
+public class OrderController {
 
-	
 }

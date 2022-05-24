@@ -1,4 +1,4 @@
-package entity;
+package com.STRABLAPP.entity;
 
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="customer")
-public class Customer {
+public class CustomerEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Customer {
 	@Column(name="address")
 	private String address;
 	
-	public Customer(long id, String name, String phone, String address) {
+	public CustomerEntity(long id, String name, String phone, String address) {
 		super();
 		Id = id;
 		this.name = name;

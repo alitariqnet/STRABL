@@ -1,4 +1,6 @@
-package entity;
+package com.STRABLAPP.entity;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Product")
-public class Product {
+@Table(name="products")
+public class Product implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -25,6 +31,10 @@ public class Product {
 	@Column(name="price")
 	private int price;
 	
+	public Product() {
+		
+	}
+			
 	public Product(long id, String name, String color, String brand, String type, int price) {
 		this.id=id;
 		this.name = name;
