@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.STRABLAPP.IService.IProduct;
@@ -55,4 +59,19 @@ public class ProductService implements IProduct{
 	public List<Product> getAllProductsDesc() {
 		return productDAO.getAllProductsDesc();
 	}
+
+	@Override
+	public List<Product> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
+
+	        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+	                : Sort.by(sortBy).descending();
+
+	        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+
+	        Page<Product> products = productRepository.findAll(pageable);
+
+	        List<Product> listOfProducts = products.getContent();
+
+	        return listOfProducts;
+	    	}	
 }

@@ -45,4 +45,9 @@ public class ProductController {
     public Product addProduct(@Validated @RequestBody Product product) {
         return productService.save(product);
     }     
+    
+    @GetMapping(value="/productswithpagination")
+    public List<Product> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
+        return productService.getAllProducts(pageNo, pageSize, sortBy, sortDir);
+    }  
 }
