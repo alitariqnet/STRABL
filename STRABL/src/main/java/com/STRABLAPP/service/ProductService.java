@@ -74,7 +74,7 @@ public class ProductService implements IProduct{
 
 	        List<Product> listOfProducts = products.getContent();
 	        Map<String, Object> response = new HashMap<>();
-	        response.put("tutorials", products);
+	        response.put("products", products);
 	        response.put("currentPage", products.getNumber());
 	        response.put("totalItems", products.getTotalElements());
 	        response.put("totalPages", products.getTotalPages());
