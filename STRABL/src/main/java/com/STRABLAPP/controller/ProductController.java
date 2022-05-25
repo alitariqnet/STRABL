@@ -1,6 +1,7 @@
 package com.STRABLAPP.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ public class ProductController {
     }     
     
     @GetMapping(value="/productswithpagination")
-    public List<Product> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
+    public Map<String, Object> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
         return productService.getAllProducts(pageNo, pageSize, sortBy, sortDir);
     }  
 }

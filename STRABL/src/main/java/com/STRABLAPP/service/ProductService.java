@@ -1,6 +1,8 @@
 package com.STRABLAPP.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +63,7 @@ public class ProductService implements IProduct{
 	}
 
 	@Override
-	public List<Product> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
+	public  Map<String, Object> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
 
 	        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
 	                : Sort.by(sortBy).descending();
@@ -71,7 +73,11 @@ public class ProductService implements IProduct{
 	        Page<Product> products = productRepository.findAll(pageable);
 
 	        List<Product> listOfProducts = products.getContent();
-
-	        return listOfProducts;
+	        Map<String, Object> response = new HashMap<>();
+	        response.put("tutorials", products);
+	        response.put("currentPage", products.getNumber());
+	        response.put("totalItems", products.getTotalElements());
+	        response.put("totalPages", products.getTotalPages());
+	        return response;
 	    	}	
 }
