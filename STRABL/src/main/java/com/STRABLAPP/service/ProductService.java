@@ -79,5 +79,5 @@ public class ProductService implements IProduct{
 	        response.put("totalItems", products.getTotalElements());
 	        response.put("totalPages", products.getTotalPages());
 	        return response;
-	    	}	
+	    	}
 }
