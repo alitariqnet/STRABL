@@ -49,6 +49,7 @@ public class ProductController {
     
     @GetMapping(value="/productswithpagination")
     public Map<String, Object> getAllProducts(int pageNo, int pageSize, String sortBy, String sortDir) {
+    	System.out.println(pageNo+pageSize+sortBy+sortDir);
         return productService.getAllProducts(pageNo, pageSize, sortBy, sortDir);
     }  
 }
